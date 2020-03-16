@@ -1,0 +1,60 @@
+<h2>Products</h2>
+
+<div *ngFor="let product of products; index as productId">
+   <!-- ; index as productId το εβαλα για το routing -->
+
+  <h3>
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+      {{ product.name }}
+    </a>
+  </h3>
+<!-- . . .[routerLink]="['/products', productId] μπηκε για routing, ουσιαστικά έκανα το κάθε product να σε στέλνει σε μια σελίδα δικη του σαν λινκ -->
+
+  <p *ngIf="product.description">
+    Description: {{ product.description }}
+  </p>
+
+ <button (click)="share1()">
+  Share now  <!-- κουμπάκι share-->
+</button>
+
+<!-- test button -->
+ <button (click)="share2()">
+  Share later  <!-- κουμπάκι share-->
+</button>
+
+<app-product-alerts
+  [product]="product" 
+  (notify)="onNotify()">
+</app-product-alerts>
+
+</div>
+
+
+<button (click)="share3()">
+  Share me man  <!-- κουμπάκι share3-->
+</button>
+
+<body>
+  .
+  .
+  .
+  .
+  .
+  /
+  ////
+
+</body>
+
+
+<button (click)="share4()">
+  Share4  <!-- κουμπάκι share3-->
+</button>
+
+
+
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
